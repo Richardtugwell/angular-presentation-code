@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="app" ng-controller="MainCtrl as main">
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>{{main.name}}</h1>
+                <input ng-model="main.name">
+            </div>
+            <div class="col-sm-6">
+                <h1>The Model</h1>
+                <pre>{{main | json }}</pre>
+            </div>
+        </div>
+    </div>
+    <script src="app1.js"></script>
+</body>
+</html>

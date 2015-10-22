@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="app" ng-controller="MainCtrl as main">
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>{{main.name}}</h1>
+        <div class="row">
+            <div class="col-sm-6">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Gender</th>
+                        <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="person in main.contacts">
+                            <td>{{person.firstname}}</th>
+                            <td>{{person.lastname}}</td>
+                            <td>{{person.gender}}</td>
+                            <td>{{person.salary}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-6">
+                <pre>{{main | json }}</pre>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

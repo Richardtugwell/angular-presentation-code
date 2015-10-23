@@ -1,8 +1,12 @@
 angular.module('app', []);
 
-// MainCtrl.js
 function MainCtrl () {
-    this.name = 'Angular Templates';
+
+    this.title = 'Angular Templates'; //This becomes the model, along with any other properties
+
+    this.alertText = function(text) {
+        alert("The title is " + text);
+    }
 }
 
 angular

@@ -1,0 +1,49 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div class="container" ng-controller="MainCtrl as main">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Custom Filter ng-repeat</h1>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="main.gender" value="all"> All
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="main.gender" value="male"> Male
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" ng-model="main.gender" value="female"> Female
+                    </label>
+                    <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="contact in main.contacts | filterByGender:main.gender">
+                            <td>{{contact.firstname}}</th>
+                            <td>{{contact.lastname}}</td>
+                            <td>{{contact.gender}}</td>
+                            <td>{{contact.salary}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <h1>Model</h1>
+                <pre>{{main | json }}</pre>
+            </div>
+        </div>
+    </div>
+    <script src="app3.js"></script>
+</body>
+</html>

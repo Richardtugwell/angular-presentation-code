@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="app" ng-controller="MainCtrl as main">
+<head>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="angular.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>Forms</h1>
+                <div>
+                    <select ng-model="main.gender" ng-options="gender.value as gender.name for gender in main.genders"></select>
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>Salary</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="person in main.contacts | filterByGender:main.gender">
+                            <td><input ng-model='person.firstname'></th>
+                            <td><input ng-model='person.lastname'</td>
+                            <td><input ng-model='person.gender'></td>
+                            <td><input ng-model='person.salary'></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-4">
+                <h1>Model</h1>
+                <pre>{{main | json }}</pre>
+            </div>
+        </div>
+    </div>
+    <script src="app4.js"></script>
+</body>
+</html>

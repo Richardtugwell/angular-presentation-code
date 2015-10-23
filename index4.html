@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-sm-8" ng-form name="main.myForm">
                 <h1>Forms</h1>
                 <div>
                     <select ng-model="main.gender" ng-options="gender.value as gender.name for gender in main.genders"></select>
@@ -24,7 +24,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="person in main.contacts | filterByGender:main.gender">
+                        <tr ng-repeat="person in main.contacts track by $index | filterByGender:main.gender ">
                             <td><input ng-model='person.firstname'></th>
                             <td><input ng-model='person.lastname'</td>
                             <td><input ng-model='person.gender'></td>
@@ -33,10 +33,13 @@
                         </tr>
                     </tbody>
                 </table>
+                <button class="button button-default" ng-click="main.addContact()">Add Contact</button>
+                <button ng-disabled="main.myForm.$pristine" class="button button-default" ng-click="main.saveContacts()">Save Contacts</button>
             </div>
             <div class="col-sm-4">
                 <h1>Model</h1>
-                <pre>{{main | json }}</pre>
+                <input type="checkbox" ng-model="main.showModel"> Show Model
+                <pre ng-show="main.showModel">{{main | json }}</pre>
             </div>
         </div>
     </div>

@@ -19,6 +19,7 @@
                     <label class="radio-inline">
                       <input type="radio" ng-model="main.gender" value="female"> Female
                     </label>
+                    <p> Showing {{filteredObjects.length}} contacts from a total of {{main.contacts.length}}
                     <table class="table table-striped">
                     <thead>
                         <tr>
@@ -29,7 +30,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="contact in main.contacts | filterByGender:main.gender">
+                        <tr ng-repeat="contact in filteredObjects = (main.contacts | filterByGender:main.gender)">
                             <td>{{contact.firstname}}</th>
                             <td>{{contact.lastname}}</td>
                             <td>{{contact.gender}}</td>

@@ -3,6 +3,16 @@ angular.module('app', []);
 // MainCtrl.js
 function MainCtrl () {
 
+    this.addContact = function() {
+        var newContact = {};
+        this.contacts.push(newContact);
+    }
+
+    this.saveContacts = function() {
+        alert("Gonna send all this to the server " + JSON.stringify(this.contacts) );
+    }
+
+
     // Our model
     this.gender = 'all';
     this.genders = [{name: 'Everybody', value: 'all' },{ name: 'Only Males', value: 'male' },{ name: 'Only females', value: 'female' }];

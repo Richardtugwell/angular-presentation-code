@@ -20,7 +20,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="contact in main.contacts">
+                        <tr ng-class="{'female' : contact.gender=='male'}" ng-repeat="contact in main.contacts">
                             <td>{{contact.firstname}}</th>
                             <td>{{contact.lastname}}</td>
                             <td>{{contact.gender}}</td>

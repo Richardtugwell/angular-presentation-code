@@ -4,7 +4,7 @@ angular.module('app', []);
 function MainCtrl () {
 
     // Our model
-    this.gender = 'all';
+    this.gender = 'female';
     this.contacts = [
         {
             "firstname": "Marge",
